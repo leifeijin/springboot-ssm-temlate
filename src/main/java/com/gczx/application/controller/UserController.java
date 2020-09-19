@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
-@Api("用户控制器")
+/**
+ * @author leifeijin
+ */
+@Api(tags = "用户控制器")
 @RestController
 public class UserController {
     @Resource
@@ -28,7 +31,7 @@ public class UserController {
             @ApiResponse(code = 201, message = "用户登录失败"),
     })
     @GetMapping("/login")
-    public JsonResult userLogin(UserGetDto userGetDto) {
+    public JsonResult<UserEntity> userLogin(UserGetDto userGetDto) {
         UserEntity userEntity = userService.getUserByNameAndPassword(userGetDto.getName(), userGetDto.getPassword());
         if (null != userEntity) {
             return JsonResult.success(userEntity);
@@ -39,11 +42,11 @@ public class UserController {
 
     /**
      * 用户测试
-     * @return
+     * @return String
      */
     @ApiImplicitParam(name = "token", paramType = "header", dataType = "String", required = true)
     @GetMapping("/test")
-    public JsonResult userTest() {
+    public JsonResult<String> userTest() {
 
         return JsonResult.success("测试成功");
     }

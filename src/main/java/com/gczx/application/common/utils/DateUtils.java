@@ -4,9 +4,14 @@ import java.util.Date;
 
 /**
  * 时间处理类
- * @author guofu
+ * @author leifeijin
  */
 public class DateUtils {
+    /**
+     * 私有构造方法
+     */
+    private DateUtils() {}
+
     /**
      * 获取当前时间
      * @author guofu

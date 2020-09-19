@@ -1,3 +1,8 @@
 spring:
   profiles:
     active: dev
+swagger:
+  controller: com.gczx.application.controller
+  title: application API Doc
+  description: This is a restful api document of application.
+  version: 1.0

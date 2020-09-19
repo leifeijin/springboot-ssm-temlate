@@ -8,13 +8,20 @@ import cn.hutool.http.HttpStatus;
  */
 public class BaseBusinessException extends RuntimeException {
 
-    private Integer code;
+    private final Integer code;
 
-    // 给子类用的方法
+    /**
+     * 根据响应枚举构造类
+     * @param responseCodeEnum 响应枚举
+     */
     public BaseBusinessException(ResponseCodeEnum responseCodeEnum) {
         this(responseCodeEnum.getMessage(), responseCodeEnum.getCode());
     }
-    // 给子类用的方法
+
+    /**
+     * 根据message构造类
+     * @param message 异常消息
+     */
     public BaseBusinessException(String message) {
         this(message, HttpStatus.HTTP_UNAUTHORIZED);
     }
@@ -26,9 +33,5 @@ public class BaseBusinessException extends RuntimeException {
 
     public Integer getCode() {
         return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
     }
 }

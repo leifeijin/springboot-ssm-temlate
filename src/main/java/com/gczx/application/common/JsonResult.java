@@ -13,13 +13,21 @@ import lombok.ToString;
 @Setter
 @ToString
 public class JsonResult<T> {
-    /*响应编码*/
+    /**
+     * 响应编码
+     */
     private int code;
-    /*相应状态*/
+    /**
+     * 相应状态
+     */
     private String status;
-    /*响应信息*/
+    /**
+     * 响应信息
+     */
     private String message;
-    /*响应数据*/
+    /**
+     * 响应数据
+     */
     private T data;
 
     public JsonResult() {
@@ -32,8 +40,8 @@ public class JsonResult<T> {
      */
     public JsonResult(T data) {
         this.code = 200;
-        this.message = Definition.RTS_OPERATE_SUCCESS;
-        this.status = Definition.RTS_STATUS_SUCCESS;
+        this.message = Definition.RTS_OPERATE_SUCCESS.getValue();
+        this.status = Definition.RTS_STATUS_SUCCESS.getValue();
         this.data = data;
     }
 
@@ -44,7 +52,7 @@ public class JsonResult<T> {
      * @return 数据
      */
     public static <T> JsonResult<T> success(T data) {
-        return new JsonResult<T>(data);
+        return new JsonResult<>(data);
     }
 
     /**
@@ -56,11 +64,11 @@ public class JsonResult<T> {
      * @return 数据
      */
     public static <T> JsonResult<T> error(T data, String message, int code) {
-        JsonResult<T> jsonResult = new JsonResult<T>();
+        JsonResult<T> jsonResult = new JsonResult<>();
         jsonResult.setCode(code);
         jsonResult.setMessage(message);
         jsonResult.setData(data);
-        jsonResult.status = Definition.RTS_STATUS_FAILURE;
+        jsonResult.status = Definition.RTS_STATUS_FAILURE.getValue();
         return jsonResult;
     }
 
@@ -69,11 +77,11 @@ public class JsonResult<T> {
     }
 
     public static <T> JsonResult<T> error(T data, int code) {
-        return error(data, Definition.RTS_OPERATE_FAILURE, code);
+        return error(data, Definition.RTS_OPERATE_FAILURE.getValue(), code);
     }
 
     public static <T> JsonResult<T> error(T data) {
-        return error(data, Definition.RTS_OPERATE_FAILURE, 400);
+        return error(data, Definition.RTS_OPERATE_FAILURE.getValue(), 400);
     }
 
     public static <T> JsonResult<T> error(String message, int code) {

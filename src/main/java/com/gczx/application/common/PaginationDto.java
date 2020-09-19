@@ -5,8 +5,13 @@ package com.gczx.application.common;
  * @author guofu
  */
 public class PaginationDto {
-    /*当前页*/
+    /**
+     * 当前页
+     */
     public int offset = 1;
-    /*每页大小*/
+
+    /**
+     * 每页大小
+     */
     public int pageSize = 10;
 }

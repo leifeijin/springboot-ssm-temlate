@@ -21,9 +21,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
+/**
+ * @author  leifeijin
+ */
 @ControllerAdvice
 public class HeaderModifierHandler implements ResponseBodyAdvice<Object> {
-    @Value("${some.work.jwtKey}")
+    @Value("${jwt.jwtKey}")
     private String jwtKey;
 
     @Override
@@ -32,13 +35,16 @@ public class HeaderModifierHandler implements ResponseBodyAdvice<Object> {
     }
 
     @Override
-    public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
+    public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType,
+                                  Class<? extends HttpMessageConverter<?>> selectedConverterType,
+                                  ServerHttpRequest request, ServerHttpResponse response) {
         ServletServerHttpRequest ssReq = (ServletServerHttpRequest)request;
         ServletServerHttpResponse ssResp = (ServletServerHttpResponse)response;
         HttpServletRequest req = ssReq.getServletRequest();
         HttpServletResponse res = ssResp.getServletResponse();
         String uri = req.getRequestURI();
-        if (res.getStatus() == ResponseCodeEnum.SUCCESS.getCode() && uri.contains("/login")) {
+        String loginUrl = "/login";
+        if (ResponseCodeEnum.SUCCESS.getCode() == res.getStatus() && uri.contains(loginUrl)) {
             JSON parse = JSONUtil.parse(body);
             UserEntity user = parse.getByPath("data", UserEntity.class);
             if (null != user) {

@@ -50,10 +50,10 @@ public class DemoServiceImpl extends ServiceImpl<IDemoMapper, DemoEntity> implem
             if (null != name && !name.equals("")) {
                 demoEntity.setName(name);
             }
-            if (!("0".equals(String.valueOf(serial)) || "null".equals(String.valueOf(serial)) || serial <= 0)) {
+            if (serial > 0) {
                 demoEntity.setSerial(serial);
             }
-            if (!("0".equals(String.valueOf(order)) || "null".equals(String.valueOf(order)) || order <= 0)) {
+            if (order > 0) {
                 demoEntity.setOrder(order);
             }
             return demoMapper.updateById(demoEntity);
