@@ -8,7 +8,7 @@
                 name like CONCAT('%',#{name},'%')
             </if>
             <if test="serial != 0">
-                serial = #{serial}
+                and serial = #{serial}
             </if>
         </where>
         limit #{offset}, #{pageSize}

@@ -11,4 +11,19 @@ public interface IUserService extends IService<UserEntity> {
      * @return
      */
     UserEntity getUserByNameAndPassword(String name, String password);
+
+    /**
+     * 添加用户
+     * @param name
+     * @param displayName
+     * @param roleId
+     * @return
+     */
+    UserEntity addUser(String name, String displayName, Long roleId);
+
+    /**
+     * 删除用户信息
+     * @param userId
+     */
+    void delUser(Long userId);
 }

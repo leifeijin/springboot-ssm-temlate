@@ -9,5 +9,5 @@ public class DemoUpdateDto {
     private long id;
     private String name;
     private int serial;
-    private  int order;
+    private int order;
 }

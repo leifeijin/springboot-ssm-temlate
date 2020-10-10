@@ -8,5 +8,5 @@ import lombok.Setter;
 public class DemoAddDto {
     private String name;
     private int serial;
-    private  int order;
+    private int order;
 }
