@@ -99,6 +99,8 @@
 
 http://localhost:8080/swagger-ui.html
 
+http://localhost:8080/doc.html
+
 #### Development
 
 To start your application in the dev profile, simply run:
