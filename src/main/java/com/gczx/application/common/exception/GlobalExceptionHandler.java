@@ -13,12 +13,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler({UserException.class})
-    public JsonResult<Object> handleUserException(UserException e) {
-        log.error(e.getMessage());
-        return JsonResult.error(e.getMessage(), e.getCode());
-    }
-
     @ExceptionHandler({BaseBusinessException.class})
     public JsonResult<Object> handleBusinessException(BaseBusinessException e) {
         log.error(e.getMessage());

@@ -21,12 +21,12 @@ public class InterceptorConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authenticationInterceptor())
-                .addPathPatterns("/**")
+                .addPathPatterns("/api/**")
                 // 使用java8 stream().map().collect()用法去掉每个url的空格
                 .excludePathPatterns(Arrays.stream(excludePathPatterns.split(","))
                 .map(String::trim).collect(Collectors.toList()));
         registry.addInterceptor(casbinInterceptor())
-                .addPathPatterns("/**");
+                .addPathPatterns("/api/**");
     }
 
     @Override

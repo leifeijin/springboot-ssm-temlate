@@ -56,6 +56,15 @@ public class JsonResult<T> {
     }
 
     /**
+     * 成功时处理
+     * @param <T> 数据类型
+     * @return 数据
+     */
+    public static <T> JsonResult<T> success() {
+        return new JsonResult<>(null);
+    }
+
+    /**
      * 失败时处理
      * @param data 数据
      * @param message 错误消息

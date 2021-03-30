@@ -7,6 +7,7 @@ import com.gczx.application.controller.dto.DemoGetDto;
 import com.gczx.application.controller.dto.DemoUpdateDto;
 import com.gczx.application.entity.DemoEntity;
 import com.gczx.application.service.IDemoService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,7 @@ import javax.annotation.Resource;
 /**
  * @author leifeijin
  */
+@Api(tags = "demo控制器")
 @RestController
 @RequestMapping("/api/demo")
 public class DemoController {

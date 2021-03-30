@@ -14,9 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
 /**
- * @Author: leifeijin
- * @Date: 2020/9/21
- * @Description:
+ * @author leifeijin
  */
 public class CasbinInterceptor implements HandlerInterceptor {
     @Resource
@@ -29,7 +27,7 @@ public class CasbinInterceptor implements HandlerInterceptor {
             String token = request.getHeader("token");
             DecodedJWT decode = JWT.decode(token);
             String name = decode.getAudience().get(0);
-            String domain = "vpgz-smp";
+            String domain = "demo";
             String method = request.getMethod().toUpperCase();
             boolean enforce = enforcer.enforce(name, domain, uri, method);
             if (!enforce) {
