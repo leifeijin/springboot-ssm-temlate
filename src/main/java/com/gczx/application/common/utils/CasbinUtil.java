@@ -14,13 +14,13 @@ import java.util.List;
  * @Description: casbin工具类
  */
 @Component
-public class CasbinUtils {
+public class CasbinUtil {
 
     private static Enforcer enforcer;
 
     @Autowired
     public static void setEnforcer(Enforcer enforcer) {
-        CasbinUtils.enforcer = enforcer;
+        CasbinUtil.enforcer = enforcer;
     }
 
     /**

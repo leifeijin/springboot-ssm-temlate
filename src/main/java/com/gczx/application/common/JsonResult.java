@@ -7,7 +7,7 @@ import lombok.ToString;
 
 /**
  * Http Json响应结果信息类
- * @author guofu
+ * @author leifeijin
  */
 @Getter
 @Setter

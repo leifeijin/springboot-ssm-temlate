@@ -4,6 +4,7 @@ import com.gczx.application.common.JsonResult;
 import com.gczx.application.common.exception.BaseBusinessException;
 import com.gczx.application.entity.AttachmentEntity;
 import com.gczx.application.service.IAttachmentService;
+import com.github.xiaoymin.knife4j.annotations.ApiSort;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -15,7 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +27,7 @@ import java.net.URLEncoder;
  */
 @Slf4j
 @Api(tags = "文件上传控制器")
+@ApiSort(3)
 @RestController
 public class FileController {
     @Resource

@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
  * @Description: mybatis plus配置文件
  */
 @Configuration
-@MapperScan("com.gczx.application.service.dao*")
+@MapperScan("com.gczx.application.dao*")
 public class MyBatiesPlusConfig {
 }

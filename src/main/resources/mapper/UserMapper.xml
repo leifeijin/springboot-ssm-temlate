@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gczx.application.service.dao.IDemoMapper">
-    <select id="getDemo" resultType="com.gczx.application.entity.DemoEntity">
-        select id, name, serial, create_time, update_time from t_demo
+<mapper namespace="com.gczx.application.dao.IUserMapper">
+    <select id="getDemo" resultType="com.gczx.application.entity.UserEntity">
+        select * from t_user
         <where>
             <if test="null != name and name !='' ">
                 name like CONCAT('%',#{name},'%')
-            </if>
-            <if test="serial != 0">
-                and serial = #{serial}
             </if>
         </where>
         limit #{offset}, #{pageSize}

@@ -1,10 +1,10 @@
 package com.gczx.application.controller;
 
 import com.gczx.application.common.JsonResult;
-import com.gczx.application.common.exception.ResponseCodeEnum;
 import com.gczx.application.controller.dto.UserGetDto;
 import com.gczx.application.entity.UserEntity;
 import com.gczx.application.service.IUserService;
+import com.github.xiaoymin.knife4j.annotations.ApiSort;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +19,7 @@ import javax.servlet.http.HttpSession;
  * @author leifeijin
  */
 @Api(tags = "基础通用")
+@ApiSort(1)
 @RestController
 public class BasicController {
     @Resource

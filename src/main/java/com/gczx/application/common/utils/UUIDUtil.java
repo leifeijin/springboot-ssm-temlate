@@ -9,7 +9,7 @@ import java.util.UUID;
  * UUID生成类，用于生成32位的UUID
  * @author leifeijin
  */
-public final class UUIDUtils {
+public final class UUIDUtil {
     private static Random random;
 
     static {
@@ -20,7 +20,7 @@ public final class UUIDUtils {
         }
     }
 
-    private UUIDUtils() {
+    private UUIDUtil() {
     }
 
     /**

@@ -3,7 +3,7 @@ package com.gczx.application.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.gczx.application.entity.AttachmentEntity;
 import com.gczx.application.service.IAttachmentService;
-import com.gczx.application.service.dao.IAttachmentMapper;
+import com.gczx.application.dao.IAttachmentMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -1,6 +1,5 @@
 package com.gczx.application;
 
-import com.gczx.application.common.utils.RunSqlScriptUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

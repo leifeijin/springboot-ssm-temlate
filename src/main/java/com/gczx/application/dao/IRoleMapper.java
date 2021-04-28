@@ -1,4 +1,4 @@
-package com.gczx.application.service.dao;
+package com.gczx.application.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.gczx.application.entity.RoleEntity;

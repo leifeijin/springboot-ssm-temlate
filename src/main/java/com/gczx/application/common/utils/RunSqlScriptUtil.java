@@ -19,13 +19,13 @@ import java.sql.SQLException;
  */
 @Slf4j
 @Component
-public class RunSqlScriptUtils {
+public class RunSqlScriptUtil {
 
     private static DatabaseProperties databaseProperties;
 
     @Autowired
     public void setDatabaseProperties(DatabaseProperties databaseProperties) {
-        RunSqlScriptUtils.databaseProperties = databaseProperties;
+        RunSqlScriptUtil.databaseProperties = databaseProperties;
     }
 
     /**

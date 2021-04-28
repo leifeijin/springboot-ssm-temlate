@@ -2,6 +2,7 @@ package com.gczx.application;
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
@@ -37,7 +38,10 @@ public class MpGenerator {
         gc.setBaseResultMap(true);// XML ResultMap
         gc.setBaseColumnList(true);// XML columList
         gc.setDateType(DateType.ONLY_DATE); // 日期字段类型默认是java8的日期类型，改为 java.util.date
-        gc.setAuthor("leifeijin");
+        // 设置用户名
+        gc.setAuthor(System.getProperty("user.name"));
+        // 设置主键自增
+        gc.setIdType(IdType.AUTO);
 
         // 自定义文件命名，占位符 %s 会自动填充表实体属性
         gc.setMapperName("I%sMapper");              // mapper接口命名方式

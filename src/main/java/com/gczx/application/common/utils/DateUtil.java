@@ -6,11 +6,11 @@ import java.util.Date;
  * 时间处理类
  * @author leifeijin
  */
-public class DateUtils {
+public class DateUtil {
     /**
      * 私有构造方法
      */
-    private DateUtils() {}
+    private DateUtil() {}
 
     /**
      * 获取当前时间
