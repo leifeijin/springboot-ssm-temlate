@@ -2,7 +2,6 @@ package com.gczx.application.common.config;
 
 import com.gczx.application.common.interceptor.AuthenticationInterceptor;
 import com.gczx.application.common.interceptor.CasbinInterceptor;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +23,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
                 .addPathPatterns("/api/**")
                 // 使用java8 stream().map().collect()用法去掉每个url的空格
                 .excludePathPatterns(Arrays.stream(excludePathPatterns.split(","))
-                .map(String::trim).collect(Collectors.toList()));
+                        .map(String::trim).collect(Collectors.toList()));
         registry.addInterceptor(casbinInterceptor())
                 .addPathPatterns("/api/**");
     }

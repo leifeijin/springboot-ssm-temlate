@@ -17,9 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
 /**
- * @Author: leifeijin
- * @Date: 2020/9/10
- * @Description: 权限拦截器
+ * 用户认证信息拦截器
+ * @author: leifeijin
  */
 public class AuthenticationInterceptor implements HandlerInterceptor {
     @Value("${jwt.jwtKey}")
